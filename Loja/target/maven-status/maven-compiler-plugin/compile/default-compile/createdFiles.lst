@@ -1,0 +1,6 @@
+com\mycompany\loja\Loja.class
+Entidades\Pedido.class
+Entidades\Produto.class
+Serviços\ServicoPagamento.class
+Entidades\ItemPedido.class
+Entidades\Pagamento.class
