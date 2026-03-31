@@ -7,30 +7,6 @@ O sistema permite que o cliente navegue pelos produtos, adicione itens ao carrin
 
 ---
 
-## 🗂 Estrutura do Projeto
-Loja
-├─ src
-│   └─ main
-│       └─ java
-│           ├─ Entidades
-│           │   ├─ Produto.java
-│           │   ├─ ItemPedido.java
-│           │   ├─ Pedido.java
-│           │   └─ Pagamento.java
-│           ├─ Serviços
-│           │   └─ ServicoPagamento.java
-│           └─ com
-│               └─ mycompany
-│                   └─ loja
-│                       └─ Loja.java
-├─ target
-│   ├─ classes
-│   │   ├─ Entidades
-│   │   ├─ Serviços
-│   │   └─ com/mycompany/loja
-│   └─ maven-status/maven-comp
-├─ pom.xml
-
 ## Diagrama de Atividades UML
 
 A seguir, um diagrama demonstrando o fluxo lógico de atividades do projeto, uma loja de poções mágicas:
