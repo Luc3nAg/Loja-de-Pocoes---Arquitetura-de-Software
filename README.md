@@ -16,6 +16,14 @@ A seguir, um diagrama demonstrando o fluxo lógico de atividades do projeto, uma
 
 ---
 
+## Diagrama Entidade-Relacionamento (DER)
+
+Abaixo está o modelo lógico de dados utilizado para estruturar as entidades do sistema, destacando chaves primárias (PK), chaves estrangeiras (FK) e as cardinalidades.
+
+![Diagrama Entidade Relacionamento](LojinhaDER.png)
+
+---
+
 ## ⚙️ Funcionalidades
 - Listagem de produtos disponíveis.  
 - Adição de itens ao carrinho.  

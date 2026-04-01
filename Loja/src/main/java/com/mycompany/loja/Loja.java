@@ -4,11 +4,13 @@
 
 package com.mycompany.loja;
 
+import java.util.Scanner;
+
+import Entidades.Cliente;
 import Entidades.Pagamento;
 import Entidades.Pedido;
 import Entidades.Produto;
 import Serviços.ServicoPagamento;
-import java.util.Scanner;
 
 /**
  *
@@ -17,6 +19,10 @@ import java.util.Scanner;
 public class Loja {
 
     public static void main(String[] args) {
+
+        // Identificação de cliente (criado estaticamente conforme exigência da atividade)
+        Cliente clienteAtual = new Cliente("Guilherme", "gui@email.com");
+        
         Scanner sc = new Scanner(System.in);
         Produto vida = new Produto("Pocao de vida", 10);
         Produto mana = new Produto("Pocao de mana", 10);
@@ -26,8 +32,11 @@ public class Loja {
         
         Pedido pedido = new Pedido();
         
+        // Associa o cliente ao pedido criado (refletindo o relacionamento no DER)
+        pedido.setCliente(clienteAtual);
+        
         boolean loja = true;
-        while (loja == true) {            
+        while (loja) {            
             System.out.println("""
                                LOJA DE POCOES
                                """);
@@ -69,15 +78,18 @@ public class Loja {
                     System.out.println("adicionada ao carrinho");
                     break;
                 case 6:
-                    if(pedido.vazio() == true){
+                    if(pedido.vazio()){
                         System.out.println("Carrinho vazio");
                         break;
                     }
-                    System.out.println("Indo para o pagamento");
-                    System.out.println("produtos:");
+                    System.out.println("Indo para o pagamento...");
+                    
+                    // Exibindo de quem é o pedido com base na vinculação feita
+                    System.out.println("Pedido do cliente: " + pedido.getCliente().getNome());
+                    System.out.println("Produtos:");
                     pedido.mostraritens();
                     
-                    //lógica de pagamento
+                    // Lógica de pagamento
                     System.out.println("Total a pagar: " + pedido.valorTotal());
                     
                     ServicoPagamento servico = ServicoPagamento.getInstance();
@@ -96,5 +108,7 @@ public class Loja {
                     break;
             } 
         }
+        
+        sc.close(); // Fechando o Scanner (boa prática de programação)
     }
 }

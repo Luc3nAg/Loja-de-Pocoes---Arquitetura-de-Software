@@ -11,7 +11,15 @@ import java.util.ArrayList;
  * @author guluc
  */
 public class Pedido {
+    private Cliente cliente;
     ArrayList<ItemPedido> lista = new ArrayList<>();
+
+    public void setCliente(Cliente cliente) { 
+        this.cliente = cliente; 
+    }
+    public Cliente getCliente() { 
+        return cliente; 
+    }
     
     public void addItem(Produto produto){
         lista.add(new ItemPedido(produto, 1));
